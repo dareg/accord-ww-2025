@@ -26,7 +26,7 @@ If you execute the script now with the command ```fypp ex1.fypp``` you should se
 But we want to generate Fortran code, so replace this print command with ```write(*,*) i```
 Rerun the fypp command to check the result.
 
-Now we want to print the content of the python variable *i*, not the litteral charcter i. To do so we need to tell fypp to interpret a part of the line. If we add **#:** at the beginning of the line it would try to interpret the whole write statement, but we just want to interpret *i*. To do so you must enclosed it with **\$\{** and **\}\$**. So if the variable is called index you will have to write **\$\{index\}\$**.
+Now we want to print the content of the python variable *i*, not the literal character i. To do so we need to tell fypp to interpret a part of the line. If we add **#:** at the beginning of the line it would try to interpret the whole write statement, but we just want to interpret *i*. To do so you must enclosed it with **\$\{** and **\}\$**. So if the variable is called index you will have to write **\$\{index\}\$**.
 
 Check that it works with the command:
 ```
@@ -53,6 +53,6 @@ end interface print_value
 
 Compile it and check that you only need to call *print_value* whatever the type.
 
-3. Now use the fypp directives to remove the redundancy. Instead of writing three times the same subroutine, write a fypp for-loop that generates the three subroutines. The content of the subroutine will be esseintialy the same Fortran code appart the type of the input variable that you will declare by using a fypp variable.
+3. Now use the fypp directives to remove the redundancy. Instead of writing three times the same subroutine, write a fypp for-loop that generates the three subroutines. The content of the subroutine will be almost the same Fortran code appart the type of the input variable that you will declare by using a fypp variable.
 
 # Ex 3 - 
