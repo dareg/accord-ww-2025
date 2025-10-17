@@ -81,3 +81,10 @@ To use python code inline, enclose it with **\$\{** and **\}\$** like the variab
 ```
 character :: ${str(d).upper()$}
 ```
+
+# Ex 5 - It's just Python !
+
+If you have complicated stuff to compute in the python code, it might be better to put it in it's own python file. to use it when running fypp you must give the path to the directori contiang the modules with the option *-M* and use the option *-m* to specify which module you want to use. For instance:
+```
+fypp -m mymodule -M path/to/my/modules code_to_transform.fypp
+```
