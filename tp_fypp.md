@@ -70,11 +70,14 @@ Don't forget it should also works for integer.
 
 # Ex 4 - Using variables and inline python code
 
-You can define variables to be used in the fypp code part with:
+Use fypp to generate a module that contains the three subroutines. Each subroutine will takes an array of integer which dimensions are either 3 or 5 or 8 and prints its values. Finally add the generic interface so they all can be called from the same name.
+
+To define variables with fypp:
 ```
 #:def dimensions = [3,5,8]
 ```
 
-Use fypp to generate a module that contains the three subroutines necessary to print the content of an array of integer which dimensions are either 3 or 5 or 8. Then add the generic interface so they all can be called from the same name.
-
-
+To use python code inline, enclose it with **\$\{** and **\}\$** like the variables:
+```
+character :: ${str(d).upper()$}
+```
