@@ -46,7 +46,9 @@ Modify the program of the first exercice to add some data transfer. Compile and 
 
 ## Ex 3 - Storing and accessing multiples blocks in a field
 
-## Ex - Encapsulating a derived datatype to field API
+When creating a owner type, by default the last dimension will not be for storing data but to store the blocks (one per thread). You can change the default value with the PERSISTENT option in the field\_new call. This is usefull because most of our parallelisation is done
+
+## Ex 4 - Encapsulating a derived datatype to field API
 
 Download the code from URL
 
