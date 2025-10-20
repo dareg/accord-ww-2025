@@ -4,9 +4,18 @@ PROGRAM MAIN
   TYPE(TTRC) :: YDTRC
   INTEGER :: I
   CALL INIT_CONSTANTS()
+
   CALL INIT_TTRC(YDTRC)
-  DO I=1,10
+
+!$omp parallel do
+  DO BLK=1,NGPBLKS
+
+    !To implement
+    !CALL YDTRC%UPDATE_VIEW(BLK)
+
     CALL COMPUTE(YDTRC)
   ENDDO
+!$omp end parallel do
+
   CALL CLEAN_DATA(YDTRC)
 END PROGRAM MAIN
