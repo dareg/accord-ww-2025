@@ -44,11 +44,21 @@ Notice those subroutines are methods to call on a field object. The PPTR argumen
 
 Modify the program of the first exercice to add some data transfer. Compile and check that the transfers are really happening with the nvprof tool.
 
-## Ex 3 - Storing and accessing multiples blocks in a field
+## A word about block access with Field API
 
-When creating a owner type, by default the last dimension will not be for storing data but to store the blocks (one per thread). You can change the default value with the PERSISTENT option in the field\_new call. This is usefull because most of our parallelisation is done
+When creating a new field, by default the last dimension is used for the blocks. It means that when you create a new FIELD\_2RB you only get one 1D array to store the data, the last dimension being for the blocks. This last dimension is used in the OpenMP *parallel for* that loop over the blocks, and do the computation for each block. To select the block to do the computation on, the code will usually use the GET\_VIEW subroutine to select a specific block index in the field, see:
 
-## Ex 4 - Encapsulating a derived datatype to field API
+```
+!$omp parallel do
+DO BLK=1,BLKMAX
+  PTR_ON_BLOCK => GET_VIEW(MYFIELD, BLK)
+  CALL COMPUTE(PTR_ON_BLOCK)
+ENDDO
+```
+
+It is possible to disable this functionality by passing the option PERSISTENT=.FALSE. when creating a new field.
+
+## Ex 4 - Encapsulating a derived datatype in Field API
 
 Download the code from URL
 
@@ -57,7 +67,7 @@ The type you will encapsulate is TTRC and is defined in the yomtrc, it's initial
 
 1. Modify the TTRC type in order to:
   - Add the correct field\_api type for each element of TTRC. The dimension of the field type will be the original dimension of the array plus one to store all the blocks.
-	  For instance,the corresponding field type for GRSURF is FIELD_3RB.
+	  For instance,the corresponding field type for GRSURF is FIELD\_3RB.
 	- Add a pointer to each member with the same original dimension, it will be used in update view to point on a specific block, and then in the computation to access the data.
 2. Reimplement the initialisation in the init\_ttrc method
 3. Reimplement the destruction in the final\_ttrc method
