@@ -2,8 +2,10 @@
 
 ## Setting up the environment
 
-If you don't already have fypp installed (try *fypp* command to check) you can install it with pip:
+If you don't already have fypp installed (try *fypp* command to check) you can install it with pip in a venv:
 ```
+python3 -m venv venv
+source venv/bin/activate
 pip3 install fypp
 ```
 
