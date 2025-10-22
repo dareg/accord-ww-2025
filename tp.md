@@ -169,3 +169,4 @@ The type you will encapsulate is TTRC and is defined in the yomtrc, it's initial
 4. Implement the update view method. In the method you will make each pointer point to a specific block part of the field type.
 4. Maybe use fypp to remove some redundancy in some of the methods.
 
+This exercise is a simplification of real work done to port some existing types to field API, see IAL [PR 300](https://github.com/ACCORD-NWP/IAL/pull/300 and [PR297](https://github.com/ACCORD-NWP/IAL/pull/297) to see the real exanples. 
