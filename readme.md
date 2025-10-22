@@ -161,8 +161,7 @@ In this exercise you will encapsulate a derived datatype already used in a codeb
 The type you will encapsulate is TTRC and is defined in the yomtrc, it's initialization is in init\_ttrc and it's destruction is in clean\_data. On top of the encapsulation you will have to lean the code base and add proper method on the type and call them instead of the disparate subroutines we have here.
 
 1. Modify the TTRC type in order to:
-  - Add the correct field\_api type for each element of TTRC. The dimension of the field type will be the original dimension of the array plus one to store all the blocks.
-	  For instance,the corresponding field type for GRSURF is FIELD\_3RB.
+  - Add the correct field\_api type for each element of TTRC. The dimension of the field type will be the original dimension of the array plus one to store all the blocks. For instance,the corresponding field type for GRSURF is FIELD\_3RB.
 	- Add a pointer to each member with the same original dimension, it will be used in update view to point on a specific block, and then in the computation to access the data.
 2. Re-implement the initialization in the init\_ttrc method
 3. Re-implement the destruction in the final\_ttrc method
