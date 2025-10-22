@@ -39,11 +39,11 @@ fypp ex1.fypp
 
 If it works, you should see ten lines of Fortran code in your terminal.
 
-Add a ```program``` statement and ``end program`` statement before the for loop to generate a complete working Fortran program. Run fypp and try to compile the generated code to check that it works.
+Add a ```program``` statement and an ``end program`` statement before the for loop to generate a complete working Fortran program. Run fypp and try to compile the generated code to check that it works.
 
 ## Ex2 - Creating a 'generic' subroutine by generating all possibilities
 
-1. Create a new module and in the *contains* section write a Fortran subroutine named *print_value_integer* that takes an *integer* in input and print that number to stdout. In the same file, do the same for *real* and *double precision*.
+1. Create a new Fortran module and in the *contains* section write a Fortran subroutine named *print_value_integer* that takes an *integer* in input and print that number to stdout. In the same file, do the same for *real* and *double precision*.
 
 In another file, add a main program to use the module and call the subroutines.
 
@@ -74,14 +74,14 @@ Don't forget it should also works for integer.
 
 ## Ex 4 - Using variables and inline python code
 
-Use fypp to generate a module that contains the three subroutines. Each subroutine will takes an array of integer which dimensions are either 3 or 5 or 8 and prints its values. Finally add the generic interface so they all can be called from the same name.
+Use fypp to generate a module that contains the three subroutines. Each subroutine will takes an array of integer which dimensions are either 3, 5 or 8 respectively and that prints the values in the array. Finally add the generic interface so they all can be called from the same name.
 
 To define variables with fypp:
 ```
 #:def dimensions = [3,5,8]
 ```
 
-To use python code inline, enclose it with **\$\{** and **\}\$** like the variables:
+As before, to use python code inline, enclose it with **\$\{** and **\}\$** like the variables:
 ```
 character :: ${str(d).upper()$}
 ```
