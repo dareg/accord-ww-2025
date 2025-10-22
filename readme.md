@@ -78,7 +78,7 @@ Use fypp to generate a module that contains the three subroutines. Each subrouti
 
 To define variables with fypp:
 ```
-#:def dimensions = [3,5,8]
+#:set dimensions = [3,5,8]
 ```
 
 As before, to use python code inline, enclose it with **\$\{** and **\}\$** like the variables:
