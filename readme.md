@@ -25,12 +25,12 @@ Create a new file named ex1.fypp. Add a python for-loop that range from 1 to 10 
 
 We will now modify this python script into an fypp script. The python for-loop will looks extremely similar to the standard python loop. The differences to have it run with fypp is that the line containing the *for* instruction must be prefixed with **#:** and the column at the end of line must be removed. Furthermore the loop must be closed with **#:endfor**
 
-If you execute the script now with the command ```fypp ex1.fypp``` you should see the print command being 10 times. Notice that you really see the print command and not the value it prints (the variable i). We have asked fypp to show ten times this print command.
+If you execute the script now with the command ```fypp ex1.fypp``` you should see the print command being displayed 10 times. Notice that you really see the print command and not the value it prints (the variable i). We have asked fypp to show ten times this print command.
 
 But we want to generate Fortran code, so replace this print command with ```write(*,*) i```
-Rerun the fypp command to check the result.
+Re-run the fypp command to check the result.
 
-Now we want to print the content of the python variable *i*, not the literal character i. To do so we need to tell fypp to interpret a part of the line. If we add **#:** at the beginning of the line it would try to interpret the whole write statement, but we just want to interpret *i*. To do so you must enclosed it with **\$\{** and **\}\$**. So if the variable is called index you will have to write **\$\{index\}\$**.
+Now we want to print the content of the python variable *i*, not the literal character i. To do so we need to tell fypp to interpret a part of the line. If we add **#:** at the beginning of the line it would try to interpret the whole write statement, but we just want to interpret the variable *i*. To do so we must enclosed it with **\$\{** and **\}\$**. So if the variable is called index you will have to write ```${index}$```.
 
 Check that it works with the command:
 ```
