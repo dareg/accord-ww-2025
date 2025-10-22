@@ -162,7 +162,7 @@ The type you will encapsulate is TTRC and is defined in the yomtrc, it's initial
 
 1. Modify the TTRC type in order to:
   - Add the correct field\_api type for each element of TTRC. The dimension of the field type will be the original dimension of the array plus one to store all the blocks. For instance,the corresponding field type for GRSURF is FIELD\_3RB.
-	- Add a pointer to each member with the same original dimension, it will be used in update view to point on a specific block, and then in the computation to access the data.
+  - Add a pointer to each member with the same original dimension, it will be used in update view to point on a specific block, and then in the computation to access the data.
 2. Re-implement the initialization in the init\_ttrc method
 3. Re-implement the destruction in the final\_ttrc method
 4. Implement the update view method. In the method you will make each pointer point to a specific block part of the field type.
