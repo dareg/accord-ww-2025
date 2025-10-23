@@ -74,7 +74,7 @@ Don't forget it should also works for integer.
 
 ## Ex 4 - Using variables and inline python code
 
-Use fypp to generate a module that contains the three subroutines. Each subroutine will takes an array of integer which dimensions are either 3, 5 or 8 respectively and that prints the values in the array. Finally add the generic interface so they all can be called from the same name.
+Use fypp to generate a module that contains the three subroutines. Each subroutine will takes an array of integer which dimensions number is either 3, 5 or 8 respectively and that prints the values in the array. Finally add the generic interface so they all can be called from the same name.
 
 To define variables with fypp:
 ```
